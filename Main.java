@@ -1,7 +1,10 @@
 class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world");
-    }
+public static void main(String[] args) {
+    PeopleStats peopleStats = new PeopleStats(Paths.get("\task-people-stats\plik.txt"));
+
+    System.out.println(String.format("Liczba osób: %d", peopleStats.count()));
+}
+
 }
 
 class PeopleStats {
@@ -17,6 +20,11 @@ class PeopleStats {
             throw new IllegalStateException(e);
         }
     }
+    
+    public long count() {
+    return people.size();
+}
+    
 }
 
 class Person {
